@@ -1,0 +1,535 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"is",
+				"isEmpty"
+			],
+			[
+				"filter",
+				"filter0"
+			],
+			[
+				"twee",
+				"TweetSet"
+			],
+			[
+				"Tweet",
+				"TweetSet"
+			],
+			[
+				"re",
+				"return_index"
+			],
+			[
+				"h",
+				"has_equal_number_of_brackets"
+			],
+			[
+				"has",
+				"has_brackets"
+			],
+			[
+				"cl",
+				"closing_bracket_position"
+			],
+			[
+				"fin",
+				"find_open"
+			],
+			[
+				"expre",
+				"expression_end"
+			],
+			[
+				"case",
+				"case class	case class"
+			],
+			[
+				"de",
+				"depth_counter"
+			],
+			[
+				"expr",
+				"expression_end"
+			],
+			[
+				"prit",
+				"println"
+			],
+			[
+				"count_",
+				"count_element"
+			],
+			[
+				"maxOf",
+				"maxOfHeadAndTail"
+			],
+			[
+				"stop",
+				"stopWords"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/home/jaturken/projects/coursera/funprog/assignments/objsets/src/main/scala/objsets/TweetSet.scala",
+			"settings":
+			{
+				"buffer_size": 5524,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/jaturken/projects/coursera/funprog/assignments/objsets/src/test/scala/objsets/TweetSetSuite.scala",
+			"settings":
+			{
+				"buffer_size": 1477,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/jaturken/projects/coursera/funprog/assignments/objsets/project/ScalaTestRunner.scala",
+			"settings":
+			{
+				"buffer_size": 4317,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Searching 78 files for \"assert\"\n\n/home/jaturken/projects/coursera/funprog/assignments/objsets/src/test/scala/objsets/TweetSetSuite.scala:\n   26    test(\"filter: on empty set\") {\n   27      new TestSets {\n   28:       assert(size(set1.filter(tw => tw.user == \"a\")) === 0)\n   29      }\n   30    }\n   ..\n   32    test(\"filter: a on set5\") {\n   33      new TestSets {\n   34:       assert(size(set5.filter(tw => tw.user == \"a\")) === 1)\n   35      }\n   36    }\n   ..\n   38    test(\"filter: 20 on set5\") {\n   39      new TestSets {\n   40:       assert(size(set5.filter(tw => tw.retweets == 20)) === 2)\n   41      }\n   42    }\n   ..\n   44    test(\"union: set4c and set4d\") {\n   45      new TestSets {\n   46:       assert(size(set4c.union(set4d)) === 4)\n   47      }\n   48    }\n   ..\n   50    test(\"union: with empty set (1)\") {\n   51      new TestSets {\n   52:       assert(size(set5.union(set1)) === 4)\n   53      }\n   54    }\n   ..\n   56    test(\"union: with empty set (2)\") {\n   57      new TestSets {\n   58:       assert(size(set1.union(set5)) === 4)\n   59      }\n   60    }\n   ..\n   63      new TestSets {\n   64        val trends = set5.ascendingByRetweet\n   65:       assert(!trends.isEmpty)\n   66:       assert(trends.head.user === \"c\")\n   67      }\n   68    }\n\n8 matches in 1 file\n",
+			"settings":
+			{
+				"buffer_size": 1281,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
+			}
+		}
+	],
+	"build_system": "Packages/Python/Python.sublime-build",
+	"command_palette":
+	{
+		"height": 252.0,
+		"selected_items":
+		[
+			[
+				"pac i",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Package Control: Discover Packages"
+			],
+			[
+				"pack",
+				"Package Control: List Packages"
+			],
+			[
+				"pac in",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 139.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/jaturken/projects/coursera/funprog/assignments/objsets/src/main/scala/objsets/TweetReader.scala",
+		"/home/jaturken/projects/coursera/funprog/assignments/objsets/src/main/scala/objsets/TweetData.scala",
+		"/home/jaturken/projects/coursera/funprog/assignments/objsets/src/test/scala/objsets/TweetSetSuite.scala",
+		"/home/jaturken/projects/coursera/funprog/assignments/objsets/project/ScalaTestRunner.scala",
+		"/home/jaturken/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
+		"/home/jaturken/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
+		"/home/jaturken/projects/coursera/funprog/assignments/recfun/src/main/scala/recfun/Main.scala",
+		"/home/jaturken/projects/coursera/funprog/assignments/recfun/src/test/scala/recfun/BalanceSuite.scala",
+		"/home/jaturken/projects/coursera/funprog/assignments/recfun/src/test/scala/recfun/CountChangeSuite.scala",
+		"/home/jaturken/projects/coursera/funprog/assignments/recfun/src/test/scala/recfun/PascalSuite.scala",
+		"/home/jaturken/projects/sublime-projects/funprog_example.sublime-project",
+		"/home/jaturken/projects/coursera/funprog/.ensime",
+		"/home/jaturken/.config/sublime-text-2/Packages/Ensime/Default.sublime-mousemap",
+		"/home/jaturken/projects/coursera/big_data/mincemeatpy/example.py",
+		"/home/jaturken/projects/coursera/big_data/triangular.py",
+		"/home/jaturken/projects/coursera/big_data/hw3data/triangular.py",
+		"/home/jaturken/projects/coursera/big_data/hw3data/w0001",
+		"/home/jaturken/projects/coursera/big_data/hw3data/c0001",
+		"/home/jaturken/projects/coursera/big_data/stopwords.py",
+		"/home/jaturken/projects/coursera/big_data/foo.rb",
+		"/home/jaturken/projects/coursera/big_data/words_count.py",
+		"/home/jaturken/projects/coursera/big_data/octo.py",
+		"/home/jaturken/projects/coursera/big_data/README.TXT",
+		"/home/jaturken/projects/sublime/PackageSetup.pyc",
+		"/home/jaturken/projects/sublime/sublime_text",
+		"/home/jaturken/.config/sublime-text-2/Packages/Default/comment.py"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"assert",
+			"(???)",
+			"intersect",
+			"Intersection",
+			"ct",
+			"23",
+			"Union",
+			"has_equal_number_of_brackets",
+			"count_pairs",
+			"var",
+			"fact",
+			"ololo",
+			"olo",
+			"map",
+			", "
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			",\n",
+			" "
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/home/jaturken/projects/coursera/funprog/assignments/objsets/src/main/scala/objsets/TweetSet.scala",
+					"settings":
+					{
+						"buffer_size": 5524,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								818,
+								818
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Scala/Scala.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 272.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/home/jaturken/projects/coursera/funprog/assignments/objsets/src/test/scala/objsets/TweetSetSuite.scala",
+					"settings":
+					{
+						"buffer_size": 1477,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								778,
+								778
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Scala/Scala.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 0,
+					"file": "/home/jaturken/projects/coursera/funprog/assignments/objsets/src/main/scala/objsets/TweetSet.scala",
+					"settings":
+					{
+						"buffer_size": 5524,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3002,
+								3002
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Scala/Scala.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1224.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/home/jaturken/projects/coursera/funprog/assignments/objsets/project/ScalaTestRunner.scala",
+					"settings":
+					{
+						"buffer_size": 4317,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								175,
+								175
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Scala/Scala.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 765.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"settings":
+					{
+						"buffer_size": 1281,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										217,
+										223
+									],
+									[
+										377,
+										383
+									],
+									[
+										538,
+										544
+									],
+									[
+										706,
+										712
+									],
+									[
+										859,
+										865
+									],
+									[
+										1010,
+										1016
+									],
+									[
+										1166,
+										1172
+									],
+									[
+										1203,
+										1209
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								220,
+								220
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 112.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"test",
+				"project/ScalaTestRunner.scala"
+			],
+			[
+				"twee",
+				"src/main/scala/objsets/TweetSet.scala"
+			],
+			[
+				"funse",
+				"src/main/scala/funsets/FunSets.scala"
+			],
+			[
+				"suite",
+				"src/test/scala/funsets/FunSetSuite.scala"
+			],
+			[
+				"bala",
+				"src/test/scala/recfun/BalanceSuite.scala"
+			],
+			[
+				"sui",
+				"src/test/scala/recfun/CountChangeSuite.scala"
+			],
+			[
+				"list",
+				"example/src/test/scala/example/ListsSuite.scala"
+			],
+			[
+				"min",
+				"mincemeat.py"
+			],
+			[
+				"re",
+				"result.txt"
+			],
+			[
+				"sp",
+				"stopwords.py"
+			],
+			[
+				"hw",
+				"hw3data/c0001"
+			],
+			[
+				"",
+				"octo.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/home/jaturken/projects/coursera/funprog/sublime-projects/funprog_recfun.sublime-project"
+			]
+		],
+		"width": 606.0
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 139.0,
+	"status_bar_visible": true
+}

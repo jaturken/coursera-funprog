@@ -1,0 +1,374 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"re",
+				"return_index"
+			],
+			[
+				"h",
+				"has_equal_number_of_brackets"
+			],
+			[
+				"has",
+				"has_brackets"
+			],
+			[
+				"cl",
+				"closing_bracket_position"
+			],
+			[
+				"fin",
+				"find_open"
+			],
+			[
+				"expre",
+				"expression_end"
+			],
+			[
+				"case",
+				"case class	case class"
+			],
+			[
+				"de",
+				"depth_counter"
+			],
+			[
+				"expr",
+				"expression_end"
+			],
+			[
+				"prit",
+				"println"
+			],
+			[
+				"count_",
+				"count_element"
+			],
+			[
+				"maxOf",
+				"maxOfHeadAndTail"
+			],
+			[
+				"stop",
+				"stopWords"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/home/jaturken/projects/coursera/funprog/assignments/funsets/src/main/scala/funsets/FunSets.scala",
+			"settings":
+			{
+				"buffer_size": 2313,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "package funsets\n\nimport org.scalatest.FunSuite\n\nimport org.junit.runner.RunWith\nimport org.scalatest.junit.JUnitRunner\n\n/**\n * This class is a test suite for the methods in object FunSets. To run\n * the test suite, you can either:\n *  - run the \"test\" command in the SBT console\n *  - right-click the file in eclipse and chose \"Run As\" - \"JUnit Test\"\n */\n@RunWith(classOf[JUnitRunner])\nclass FunSetSuite extends FunSuite {\n\n\n  /**\n   * Link to the scaladoc - very clear and detailed tutorial of FunSuite\n   *\n   * http://doc.scalatest.org/1.8/index.html#org.scalatest.FunSuite\n   *\n   * Operators\n   *  - test\n   *  - ignore\n   *  - pending\n   */\n\n  /**\n   * Tests are written using the \"test\" operator and the \"assert\" method.\n   */\n  ignore(\"string take\") {\n    val message = \"hello, world\"\n    assert(message.take(5) == \"hello\")\n  }\n\n  /**\n   * For ScalaTest tests, there exists a special equality operator \"===\" that\n   * can be used inside \"assert\". If the assertion fails, the two values will\n   * be printed in the error message. Otherwise, when using \"==\", the test\n   * error message will only say \"assertion failed\", without showing the values.\n   *\n   * Try it out! Change the values so that the assertion fails, and look at the\n   * error message.\n   */\n  ignore(\"adding ints\") {\n    assert(1 + 2 === 3)\n  }\n\n  \n  import FunSets._\n\n  test(\"contains is implemented\") {\n    assert(contains(x => true, 100))\n  }\n  \n  /**\n   * When writing tests, one would often like to re-use certain values for multiple\n   * tests. For instance, we would like to create an Int-set and have multiple test\n   * about it.\n   * \n   * Instead of copy-pasting the code for creating the set into every test, we can\n   * store it in the test class using a val:\n   * \n   *   val s1 = singletonSet(1)\n   * \n   * However, what happens if the method \"singletonSet\" has a bug and crashes? Then\n   * the test methods are not even executed, because creating an instance of the\n   * test class fails!\n   * \n   * Therefore, we put the shared values into a separate trait (traits are like\n   * abstract classes), and create an instance inside each test method.\n   * \n   */\n\n  trait TestSets {\n    val s1 = singletonSet(1)\n    val s2 = singletonSet(2)\n    val s3 = singletonSet(3)\n  }\n\n  /**\n   * This test is currently disabled (by using \"ignore\") because the method\n   * \"singletonSet\" is not yet implemented and the test would fail.\n   * \n   * Once you finish your implementation of \"singletonSet\", exchange the\n   * function \"ignore\" by \"test\".\n   */\n  test(\"singletonSet(1) contains 1\") {\n    \n    /**\n     * We create a new instance of the \"TestSets\" trait, this gives us access\n     * to the values \"s1\" to \"s3\". \n     */\n    new TestSets {\n      /**\n       * The string argument of \"assert\" is a message that is printed in case\n       * the test fails. This helps identifying which assertion failed.\n       */\n      assert(contains(s1, 1), \"Singleton\")\n    }\n  }\n\n  test(\"union contains all elements\") {\n    new TestSets {\n      val s = union(s1, s2)\n      assert(contains(s, 1), \"Union 1\")\n      assert(contains(s, 2), \"Union 2\")\n    }\n\n    new TestSets {\n      val s = union(s1, s2)\n      assert(!contains(s, 3), \"Union 3\")      \n    }\n  }\n\n  test(\"intersection contains only elements from both sest\") {\n    new TestSets {\n      val s12 = union(s1, s2)\n      assert(contains(intersect(s12, s2), 2), \"Intersection 1\")\n    }\n\n    new TestSets {\n      val s12 = union(s1, s2)\n      assert(!contains(intersect(s12, s2), 1), \"Intersection 2\")\n      assert(!contains(intersect(s12, s3), 1), \"Intersection 3\")\n      assert(!contains(intersect(s12, s3), 2), \"Intersection 4\")\n      assert(!contains(intersect(s12, s3), 3), \"Intersection 5\")\n    }\n  }\n\n  test(\"diff contains elements from first sest not in second\") {\n    new TestSets {\n      val s12 = union(s1, s2)\n      assert(contains(diff(s12, s2), 1), \"Diff 1\")\n      assert(contains(diff(s12, s3), 2), \"Diff 2\")\n      assert(contains(diff(s12, s3), 1), \"Diff 3\")\n    }\n\n    new TestSets {\n      val s12 = union(s1, s2)\n      assert(!contains(diff(s12, s3), 3), \"Diff 4\")\n      assert(!contains(diff(s12, s2), 2), \"Diff 5\")\n    }\n\n  }\n}\n",
+			"file": "/home/jaturken/projects/coursera/funprog/assignments/funsets/src/test/scala/funsets/FunSetSuite.scala",
+			"file_size": 4170,
+			"file_write_time": 1349291063000000,
+			"settings":
+			{
+				"buffer_size": 4169,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/Python/Python.sublime-build",
+	"command_palette":
+	{
+		"height": 252.0,
+		"selected_items":
+		[
+			[
+				"pac i",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Package Control: Discover Packages"
+			],
+			[
+				"pack",
+				"Package Control: List Packages"
+			],
+			[
+				"pac in",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 139.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/jaturken/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
+		"/home/jaturken/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
+		"/home/jaturken/projects/coursera/funprog/assignments/recfun/src/main/scala/recfun/Main.scala",
+		"/home/jaturken/projects/coursera/funprog/assignments/recfun/src/test/scala/recfun/BalanceSuite.scala",
+		"/home/jaturken/projects/coursera/funprog/assignments/recfun/src/test/scala/recfun/CountChangeSuite.scala",
+		"/home/jaturken/projects/coursera/funprog/assignments/recfun/src/test/scala/recfun/PascalSuite.scala",
+		"/home/jaturken/projects/sublime-projects/funprog_example.sublime-project",
+		"/home/jaturken/projects/coursera/funprog/.ensime",
+		"/home/jaturken/.config/sublime-text-2/Packages/Ensime/Default.sublime-mousemap",
+		"/home/jaturken/projects/coursera/big_data/mincemeatpy/example.py",
+		"/home/jaturken/projects/coursera/big_data/triangular.py",
+		"/home/jaturken/projects/coursera/big_data/hw3data/triangular.py",
+		"/home/jaturken/projects/coursera/big_data/hw3data/w0001",
+		"/home/jaturken/projects/coursera/big_data/hw3data/c0001",
+		"/home/jaturken/projects/coursera/big_data/stopwords.py",
+		"/home/jaturken/projects/coursera/big_data/foo.rb",
+		"/home/jaturken/projects/coursera/big_data/words_count.py",
+		"/home/jaturken/projects/coursera/big_data/octo.py",
+		"/home/jaturken/projects/coursera/big_data/README.TXT",
+		"/home/jaturken/projects/sublime/PackageSetup.pyc",
+		"/home/jaturken/projects/sublime/sublime_text",
+		"/home/jaturken/.config/sublime-text-2/Packages/Default/comment.py"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"intersect",
+			"Intersection",
+			"ct",
+			"23",
+			"Union",
+			"has_equal_number_of_brackets",
+			"count_pairs",
+			"var",
+			"fact",
+			"ololo",
+			"olo",
+			"map",
+			", "
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			",\n",
+			" "
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/home/jaturken/projects/coursera/funprog/assignments/funsets/src/main/scala/funsets/FunSets.scala",
+					"settings":
+					{
+						"buffer_size": 2313,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1545,
+								1545
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Scala/Scala.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 1,
+					"file": "/home/jaturken/projects/coursera/funprog/assignments/funsets/src/test/scala/funsets/FunSetSuite.scala",
+					"settings":
+					{
+						"buffer_size": 4169,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3427,
+								3427
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Scala/Scala.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1918.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.521630781714,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 112.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"funse",
+				"src/main/scala/funsets/FunSets.scala"
+			],
+			[
+				"suite",
+				"src/test/scala/funsets/FunSetSuite.scala"
+			],
+			[
+				"bala",
+				"src/test/scala/recfun/BalanceSuite.scala"
+			],
+			[
+				"sui",
+				"src/test/scala/recfun/CountChangeSuite.scala"
+			],
+			[
+				"list",
+				"example/src/test/scala/example/ListsSuite.scala"
+			],
+			[
+				"min",
+				"mincemeat.py"
+			],
+			[
+				"re",
+				"result.txt"
+			],
+			[
+				"sp",
+				"stopwords.py"
+			],
+			[
+				"hw",
+				"hw3data/c0001"
+			],
+			[
+				"",
+				"octo.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/home/jaturken/projects/coursera/funprog/sublime-projects/funprog_recfun.sublime-project"
+			]
+		],
+		"width": 606.0
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 139.0,
+	"status_bar_visible": true
+}
